@@ -38,7 +38,7 @@ const authController = {
 
       // If registered compare password.
       const isValidUser = await registeredUser.comparePassword(user.password);
-      console.log(registeredUser, isValidUser);
+
       if (!isValidUser)
         return res.status(400).json({ msg: "Invalid credentials." });
       const token = await authService.generateToken(registeredUser);

@@ -18,7 +18,6 @@ function Register(props) {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         setUser(initialState);
       })
       .catch((err) => {

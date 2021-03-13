@@ -40,9 +40,8 @@ function App(props) {
           setUser(res?.user);
           props.history.push("/");
         } else {
-          console.log(props);
           const { location } = props;
-          console.log(location);
+
           if (location?.pathname?.includes("register")) {
             props.history.push("/");
           } else {

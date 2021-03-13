@@ -27,11 +27,9 @@ const usersController = {
 
     // Check if email is already registered
     try {
-      console.log(user.email);
       let isAlreadyRegistered = await userService.showUserByField({
         email: user.email,
       });
-      console.log(isAlreadyRegistered);
 
       if (isAlreadyRegistered)
         return res.status(400).json({ msg: "Email is already registered." });

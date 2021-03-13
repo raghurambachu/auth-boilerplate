@@ -24,7 +24,6 @@ function Login(props) {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         setUser(initialState);
         context.setUser(res.user);
         props.history.push("/");
