@@ -36,10 +36,23 @@ function App(props) {
     fetch(`/verify`)
       .then((res) => res.json())
       .then((res) => {
-        setUser(res?.user);
-        // props.history.push("/");
+        if (res?.user) {
+          setUser(res?.user);
+          props.history.push("/");
+        } else {
+          console.log(props);
+          const { location } = props;
+          console.log(location);
+          if (location?.pathname?.includes("register")) {
+            props.history.push("/");
+          } else {
+            props.history.push("/login");
+          }
+        }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   return (

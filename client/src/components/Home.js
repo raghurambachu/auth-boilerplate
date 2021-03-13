@@ -81,6 +81,7 @@ function Home(props) {
       <Header />
       <main className="container mx-auto px-4 md:px-0 lg:px-20 xl:px-40 grid grid-cols-1 md:grid-cols-4 pt-8 gap-10">
         <section className="md:col-span-3 order-2 md:order-1">
+          <h3 className="text-xl mb-5 font-bold">All Complaints</h3>
           <ul>
             {complaints.map((complaint) => (
               <li
