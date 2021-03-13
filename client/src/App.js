@@ -44,7 +44,7 @@ function App(props) {
 
   return (
     <AppContext.Provider value={{ user, setUser }}>
-      <div className="App min-h-screen bg-yellow-500">
+      <div className="min-h-screen">
         {user?._id ? <PrivateRoutes /> : <PublicRoutes />}
       </div>
     </AppContext.Provider>

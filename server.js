@@ -7,6 +7,7 @@ const path = require("path");
 // importing files
 const indexRouter = require("./routes/index");
 const userRouter = require("./routes/users");
+const complaintRouter = require("./routes/complaints");
 
 // Define Global Variables
 const app = express();
@@ -27,13 +28,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser("sanketauth"));
 
-app.use((req, res, next) => {
-  console.log(req.body);
+app.use((req, body, next) => {
+  console.log(req.url);
   next();
 });
 
 app.use("/", indexRouter);
 app.use("/users", userRouter);
+app.use("/complaints", complaintRouter);
 
 if (process.env.NODE_ENV === "production" || true) {
   app.use(express.static("client/build"));
